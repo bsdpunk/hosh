@@ -2,6 +2,7 @@ package shell
 
 import (
 	"./commands"
+	"./dice"
 	"./general"
 	"fmt"
 	"github.com/gobs/readline"
@@ -30,6 +31,15 @@ var coms = commands.Commands{
 		Usage:     "Clear the screen",
 		Action:    general.Clear,
 		Category:  "general",
+	},
+
+	{
+		Name:         "dice",
+		ShortName:    "dice",
+		Usage:        "Roll Dice",
+		SubCommands:  dice.DiceSubs,
+		StringAction: dice.GetDice,
+		Category:     "",
 	},
 }
 
